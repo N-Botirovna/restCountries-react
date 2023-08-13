@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function CountryCard({ title, flag, population, reg, cap, darkMode }) {
   return (
     <Link to={`/single-page`} className={`text-gray-600  ${darkMode ? 'dark' : ''}`}>
-      <li className={`max-w-xs shadow-lg rounded-lg  mb-5 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white'}`} 
+      <li className={`max-w-xs shadow-lg rounded-lg  mb-5 ${darkMode ? 'bg-[#2B3743] text-white' : 'bg-white'}`} 
       // style={{
       //     transition: "transform 0.2s ease",
           

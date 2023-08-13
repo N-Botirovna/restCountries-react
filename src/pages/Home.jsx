@@ -42,7 +42,7 @@ const [darkMode, setDarkMode] = useState(false);
 const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div className={`App ${darkMode ? "bg-gray-800" : ""}`}>
+    <div className={`App ${darkMode ? "bg-[#202D36]" : ""}`}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
       <div className="container mx-auto w-3/4 py-8 flex justify-between">
         <input
@@ -50,21 +50,22 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
           placeholder="Search for a country..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="py-2 px-4 rounded"
+          className={`py-2 px-4 shadow rounded w-3/5 outline-none ${darkMode ? 'bg-[#2B3743] text-white ' : ''}`}
         />
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="py-2 px-4 rounded"
+          className={`py-2 px-4 rounded w-1/4 outline-none shadow ${darkMode ? 'bg-[#2B3743] text-white ' : ''}`}
         >
           <option value="">Filter by Region</option>
           <option value="Asia">Asia</option>
           <option value="Europe">Europe</option>
           <option value="Africa">Africa</option>
           <option value="America">America</option>
+          <option value="Oceania">Oceania</option>
         </select>
       </div>
-      <ul className={`container mx-auto grid grid-cols-4 py-8 w-3/4 gap-y-8 gap-x-16 items-start divide-y divide-gray-200 ${darkMode ? 'bg-gray-800' : ''}`}>
+      <ul className={`container mx-auto grid grid-cols-4 py-8 w-3/4 gap-y-8 gap-x-16 items-start divide-y divide-gray-200 `}>
         {filteredCountries.map((country) => (
           <CountryCard
             key={country.name.common}
