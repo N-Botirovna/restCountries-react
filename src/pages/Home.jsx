@@ -30,7 +30,7 @@ function Home() {
         });
       });
   }, []);
-
+console.log(state.data);
   const filteredCountries = state.data.filter(
     (country) =>
       country.name.common.toLowerCase().includes(search.toLowerCase()) &&
@@ -69,7 +69,7 @@ const toggleDarkMode = () => setDarkMode(!darkMode);
         {filteredCountries.map((country) => (
           <CountryCard
             key={country.name.common}
-            title={country.name.common}
+            name={country.name.common}
             flag={country.flags.png}
             population={country.population}
             reg={country.region}
